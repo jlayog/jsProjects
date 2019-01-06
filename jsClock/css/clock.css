@@ -1,0 +1,30 @@
+html {
+    background: url(https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    background-size: cover; /* responsive background */
+}
+
+.body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+}
+
+.clock {
+    
+}
+
+.clock-face {
+    
+}
+
+.hour-hand {
+    
+}
+
+.minute-hand {
+    
+}
+
+.seconds-hand {
+    
+}
