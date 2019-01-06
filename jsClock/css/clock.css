@@ -1,30 +1,50 @@
 html {
     background: url(https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
     background-size: cover; /* responsive background */
+    font-family: 'helvetica neue';
+    text-align: center;
+    font-size: 10px;
 }
-
-.body {
+    
+body {
     margin: 0;
     font-size: 2rem;
     display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
 }
-
+    
 .clock {
-    
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid white;
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
 }
-
+    
 .clock-face {
-    
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
 }
-
-.hour-hand {
     
-}
-
-.minute-hand {
-    
-}
-
-.seconds-hand {
-    
+.hand {
+    width: 50%;
+    height: 6px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%; /* rotate along the x-axis pivot point on the very right hand side*/
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(.09, 1.46, .58, 1);
 }
