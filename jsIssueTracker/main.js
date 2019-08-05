@@ -87,6 +87,7 @@ function deleteIssue (id) {
 
 
 /* Figure out function for this function and input to appear
+
 function setStatusReopened (id) {
       var issues = JSON.parse(localStorage.getItem('issues'));
 
