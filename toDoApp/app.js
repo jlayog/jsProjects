@@ -21,5 +21,6 @@ for (var i = 0; i < span.length; i++) {
                 removeLi.parentNode.removeChild(removeLi);
             }, 600);
         };
+        e.stopPropagation;
     })
 };
