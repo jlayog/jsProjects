@@ -1,46 +1,25 @@
-window.setTimeout(function() {
+//Check off tasks
+var li = document.querySelectorAll("li");
+var span = document.querySelectorAll("span");
 
-    var todos = [];
-    var input = prompt("What would you like to do?");
+for (var i = 0; i < li.length; i++) {
+    li[i].addEventListener("click", function() {
+        this.classList.toggle("linethrough");
+    });
+};  
 
-    while(input !== "quit") {
-        //handle input
-        if(input === "list") {
-            listTodos();
-        } else if(input === "new") {
-            addTodos();
-            console.log("Todo added.");
-        } else if(input === "delete") {
-            deleteTodos();
-        }
 
-        //ask again for new input
-        input = prompt("What would you like to do?");
-    }
-    console.log("Successfully exited the app.")
-    
-    
-    function listTodos() {
-        console.log("**********")
-            todos.forEach(function(todo, i) {
-                console.log(i + ": " + todo);
-            });
-            console.log("**********");
-    };
-
-    function addTodos() {
-        //ask for new todo
-        var newTodo = prompt("Enter new todo");
-        //add to todo list array
-        todos.push(newTodo);
-    };
-
-    function deleteTodos() {
-        //ask for index of todo to be deleted
-        var index = prompt("Enter index of todo to delete");
-        //delete that todo
-        //splice()
-        todos.splice(index, 1);
-        console.log("Todo deleted.");
-    };
-}, 500);
+//changing jquery fadeOut and remove to javascript (my brain hurts after this one)
+for (var i = 0; i < span.length; i++) {
+    span[i].addEventListener("click", function(e) {
+        if(e.target.localName === "span") {
+            var removeLi = e.target.parentNode;
+            // fadeout css
+            removeLi.classList.add("fadeOut");
+            // wait 600ms then remove li
+            setTimeout(function() {
+                removeLi.parentNode.removeChild(removeLi);
+            }, 600);
+        };
+    })
+};

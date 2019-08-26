@@ -1,34 +1,16 @@
-* {
-    box-sizing: border-box;
+#container {
+    width: 500px;
+    margin: 0 auto;
+    border: 2px solid grey;
 }
 
-.container {
-    border: 2px solid gray;
+.linethrough {
+    color: grey;
+    text-decoration-line: line-through;
 }
 
-.header {
-    background-color: #FF4040;
-    text-align: center;
-    padding: 15px;
-}
-
-h1 {
-    color: white;
-    font-size: 35px;
-}
-
-input {
-
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-ul, li {
-    cursor: pointer;
-    position: relative;
-    padding: 10px 12px 10px 40px;
-    font-size: 20px;
+.fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 500ms linear;
 }

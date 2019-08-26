@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Simple To Do App with Vanilla JS</title>
-<script type="text/javascript" src="app.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Simple To Do App with Vanilla JS</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
     <body>
-        <h1>Todo List</h1>
-        <ul>
-            <li>"New" - Add a Todo</li>
-            <li>"List" - View all Todos</li>
-            <li>"Delete" - Remove specific Todo</li>
-            <li>"Quit" - Quit App</li>
-        </ul>
+        <div id="container">
+            <h1>Task List</h1>
+            <input type="text">
+
+            <ul>
+                <li><span>X</span> Complete Move-In Inspection for Apartment</li>
+                <li><span>X</span> Trello Similarity for Site Reorg</li>
+                <li><span>X</span> Weather API project</li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="app.js"></script>
     </body>
 </html>
