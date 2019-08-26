@@ -1,4 +1,4 @@
-#Pure JavaScript To Do App
+# Pure JavaScript To Do App
 
 You may ask "Jerel, why didn't you just use jQuery to make this easier?"
 
