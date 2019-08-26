@@ -34,6 +34,7 @@ input.addEventListener("keypress", function(e) {
         document.querySelector("ul").appendChild(createLi);
 
         // Next problem, how to add Event listeners to all future events
+        // could be useful: https://stackoverflow.com/questions/30880757/javascript-equivalent-to-on
     }
 })
 
