@@ -25,7 +25,7 @@ input.addEventListener("keypress", function(e) {
         // set li to input value
         createLi.innerHTML = "<span>X</span> " + todoText;
         // append to ul to make li
-        document.querySelector("ul").appendChild(createLi);
+        ul.appendChild(createLi);
         // Next problem, how to add Event listeners to all future events
         // https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically
     }
