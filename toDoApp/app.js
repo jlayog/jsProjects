@@ -1,22 +1,16 @@
 //Check off tasks
-var li = document.querySelectorAll("li");
-var ul = document.querySelectorAll("ul");
-var span = document.querySelectorAll("span");
-var input = document.querySelector("input[type='text']");
-
-for (var i = 0; i < li.length; i++) {
-    li[i].addEventListener("click", function() {
-        this.classList.toggle("linethrough");
-    });
-};  
+const li = document.querySelectorAll("li");
+const ul = document.querySelectorAll("ul");
+const span = document.querySelectorAll("span");
+const input = document.querySelector("input[type='text']");
 
 
-//changing jquery fadeOut and remove to javascript (my brain hurts after this one)
-for (var i = 0; i < span.length; i++) {
-    span[i].addEventListener("click", function() {
-        remove();
-    });
-};
+// refactored code here
+done();
+remove();
+
+
+
 
 //handle adding task via input
 input.addEventListener("keypress", function(e) {
@@ -32,23 +26,35 @@ input.addEventListener("keypress", function(e) {
         createLi.innerHTML = "<span>X</span> " + todoText;
         // append to ul to make li
         document.querySelector("ul").appendChild(createLi);
-
         // Next problem, how to add Event listeners to all future events
-        // could be useful: https://stackoverflow.com/questions/30880757/javascript-equivalent-to-on
+        // https://stackoverflow.com/questions/14258787/add-event-listener-on-elements-created-dynamically
     }
 })
 
 
-
+//changing jquery fadeOut and remove to javascript
 function remove() {
-    if(event.target.localName === "span") {
-        var removeLi = event.target.parentNode;
-        // fadeout css
-        removeLi.classList.add("fadeOut");
-        // wait 600ms then remove li
-        setTimeout(function() {
-            removeLi.parentNode.removeChild(removeLi);
-        }, 600);
+    for (var i = 0; i < span.length; i++) {
+        span[i].addEventListener("click", function() {    
+            if(event.target.localName === "span") {
+                var removeLi = event.target.parentNode;
+                // fadeout css
+                removeLi.classList.add("fadeOut");
+                // wait 600ms then remove li
+                setTimeout(function() {
+                    removeLi.parentNode.removeChild(removeLi);
+                }, 600);
+            };
+            event.stopPropagation;
+        });
     };
-    event.stopPropagation;
 };
+
+function done() {
+    for (var i = 0; i < li.length; i++) {
+        li[i].addEventListener("click", function() {
+            this.classList.toggle("linethrough");
+        });
+    };
+}
+
