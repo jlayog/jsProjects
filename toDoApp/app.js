@@ -3,6 +3,7 @@ const li = document.querySelectorAll("li");
 const ul = document.querySelectorAll("ul");
 const span = document.querySelectorAll("span");
 const input = document.querySelector("input[type='text']");
+const editIcon = document.getElementsByClassName("la-pencil-square-o");
 
 
 // refactored code here
@@ -21,23 +22,26 @@ input.addEventListener("keypress", function(e) {
         // create li
         var createLi = document.createElement("li");
         // set li to input value
-        createLi.innerHTML = "<span>X</span> " + todoText;
+        createLi.innerHTML = "<i class='la la-trash-o'></i> " + todoText;
         // append to ul to make li
         document.querySelector("ul").appendChild(createLi);
         // adding the eventlisteners to dynamically created elements.
         createLi.addEventListener("click", linethrough);
         createLi.addEventListener("click", fadeOut);
+        // adding css to dynamically created elements
     }
 });
 
 
-//changing jquery fadeOut and remove to javascript
+// fadeOut click
 function remove() {
     for (var i = 0; i < span.length; i++) {
         span[i].addEventListener("click", fadeOut);
     };
 };
 
+
+// jQuery fadeOut effect
 function fadeOut() {
     if(event.target.localName === "span") {
         var removeLi = event.target.parentNode;
@@ -50,7 +54,7 @@ function fadeOut() {
     };
 };
 
-// Linethrough toggle
+// Linethrough toggle click
 function done() {
     for (var i = 0; i < li.length; i++) {
         li[i].addEventListener("click", linethrough);

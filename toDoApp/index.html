@@ -5,16 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Simple To Do App with Vanilla JS</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Neucha&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
     </head>
     <body>
         <div id="container">
-            <h1>Task List</h1>
-            <input type="text">
+            <h1>Task List <i class="la la-pencil-square-o"></i></h1>
+            <input type="text" placeholder="Add a task">
 
             <ul id="myList">
-                <li><span>X</span> Complete Move-In Inspection for Apartment</li>
-                <li><span>X</span> Trello Similarity for Site Reorg</li>
-                <li><span>X</span> Weather API project</li>
+                <li><span><i class="la la-trash-o"></i></span> Complete Move-In Inspection for Apartment</li>
+                <li><span><i class="la la-trash-o"></i></span> Trello Similarity for Site Reorg</li>
+                <li><span><i class="la la-trash-o"></i></span> Weather API project</li>
             </ul>
         </div>
         <script type="text/javascript" src="app.js"></script>
