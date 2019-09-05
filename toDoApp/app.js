@@ -3,7 +3,7 @@ const li = document.querySelectorAll("li");
 const ul = document.querySelectorAll("ul");
 const span = document.querySelectorAll("span");
 const input = document.querySelector("input[type='text']");
-const editIcon = document.getElementsByClassName("la-pencil-square-o");
+const editIcon = document.querySelector(".la-pencil-square-o");
 
 
 // refactored code here
@@ -22,13 +22,12 @@ input.addEventListener("keypress", function(e) {
         // create li
         var createLi = document.createElement("li");
         // set li to input value
-        createLi.innerHTML = "<i class='la la-trash-o'></i> " + todoText;
+        createLi.innerHTML = "<span><i class='la la-trash-o'></i></span> " + todoText;
         // append to ul to make li
         document.querySelector("ul").appendChild(createLi);
         // adding the eventlisteners to dynamically created elements.
         createLi.addEventListener("click", linethrough);
         createLi.addEventListener("click", fadeOut);
-        // adding css to dynamically created elements
     }
 });
 
@@ -64,3 +63,18 @@ function done() {
 function linethrough() {
     this.classList.toggle("linethrough");
 }
+
+
+editIcon.addEventListener("click", function() {
+    if (input.style.display === "none") {
+        input.style.display = "block";
+        input.classList.remove("fadeOut");
+        input.classList.add("show");
+    } else {
+        input.classList.remove("show");
+        input.classList.add("fadeOut");
+        setTimeout(function() {
+            input.style.display = "none";
+        }, 400);
+    };   
+});

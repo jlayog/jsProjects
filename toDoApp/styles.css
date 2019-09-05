@@ -1,14 +1,10 @@
 body {
     font-family: 'Neucha', cursive;
-}
-
-body {
     background: rgb(255,95,109);
     background: linear-gradient(180deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 
 h1 {
     margin: 0;
@@ -23,6 +19,10 @@ h1 {
 
 .la-pencil-square-o {
     color: white;
+}
+
+.la-pencil-square-o:hover {
+    cursor: pointer;
 }
 
 input {
@@ -63,7 +63,6 @@ li:hover {
     cursor: pointer;
 }
 
-
 span {
     background: #f0220c;
     height: 40px;
@@ -81,6 +80,10 @@ li:hover span {
     opacity: 1;
 }
 
+/* add if icon is enclosed in a <span> */
+.la-trash-o {
+    pointer-events: none;
+  }
 
 #container {
     width: 600px;
@@ -99,5 +102,11 @@ li:hover span {
 .fadeOut {
     visibility: hidden;
     opacity: 0;
+    transition: visibility 0s 2s, opacity 500ms linear;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
     transition: visibility 0s 2s, opacity 500ms linear;
 }
